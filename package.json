@@ -23,9 +23,8 @@
     "precommit": "yarn validate",
     "validate": "yarn test",
     "test": "nyc --reporter=text jasmine spec/test/*.js",
-    "test:html": "nyc --reporter=html jasmine spec/test/*.js",
     "cz": "git-cz",
-    "coverage": "nyc report --reporter=text-lcov"
+    "coverage": "nyc report --reporter=html --reporter=text-lcov jasmine spec/test/*.js > coverage.lcov"
   },
   "config": {
     "commitizen": {

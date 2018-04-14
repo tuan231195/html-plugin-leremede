@@ -1,4 +1,4 @@
-const {HTMLHint} = require('htmlhint');
+const { HTMLHint } = require('htmlhint');
 require('../../rules/leremede-unique-id')(HTMLHint);
 
 const ruleId = 'leremede-unique-id',
@@ -11,7 +11,7 @@ describe('Rules: ' + ruleId, () => {
 					  <div ID="test"></div>`;
 		const messages = HTMLHint.verify(code, ruleOptions);
 		expect(messages.length).toBe(1);
-		assertError({message: messages[0], line: 2, col: 12, ruleId, id: 'test'});
+		assertError({ message: messages[0], line: 2, col: 12, ruleId, id: 'test' });
 	});
 
 	it('should not report correct usages', () => {
@@ -28,8 +28,7 @@ describe('Rules: ' + ruleId, () => {
 		expect(messages.length).toBe(0);
 	});
 
-
-	function assertError({message, line, col, id}) {
+	function assertError({ message, line, col, id }) {
 		expect(message.rule.id).toBe(ruleId);
 		expect(message.line).toBe(line);
 		expect(message.col).toBe(col);

@@ -22,7 +22,7 @@ jobs: # a collection of steps
           key: v1-dependencies-{{ checksum "package.json" }}
 
       # run tests!
-      - run: yarn test:html
+      - run: yarn test
 
       - run: yarn coverage
 
