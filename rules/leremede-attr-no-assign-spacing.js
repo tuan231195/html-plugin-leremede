@@ -11,30 +11,28 @@
  * attribute=10
  *
  */
-module.exports = function(HTMLHint) {
-	HTMLHint.addRule({
-		id: 'leremede-attr-no-assign-spacing',
-		description: 'All attributes must be assigned without spaces.',
-		init: function(parser, reporter) {
-			parser.addListener('tagstart', event => {
-				event.attrs.forEach(attr => {
-					const [left, right] = attr.raw.split('=', 2);
-					if (left && right && (left.endsWith(' ') || right.startsWith(' '))) {
-						// try and find the "=" part of the assignment
-						const col = event.col + event.tagName.length + left.length + 1;
+module.exports = {
+	id: 'leremede-attr-no-assign-spacing',
+	description: 'All attributes must be assigned without spaces.',
+	init: function(parser, reporter) {
+		parser.addListener('tagstart', event => {
+			event.attrs.forEach(attr => {
+				const [left, right] = attr.raw.split('=', 2);
+				if (left && right && (left.endsWith(' ') || right.startsWith(' '))) {
+					// try and find the "=" part of the assignment
+					const col = event.col + event.tagName.length + left.length + 1;
 
-						reporter.error(
-							`The assignment of [ ${attr.name} ] must not have spaces. e.g, ${
-								attr.name
-							}=${attr.quote}${attr.value}${attr.quote}`,
-							event.line,
-							col + attr.index,
-							this,
-							attr.raw
-						);
-					}
-				});
+					reporter.error(
+						`The assignment of [ ${attr.name} ] must not have spaces. e.g, ${
+							attr.name
+						}=${attr.quote}${attr.value}${attr.quote}`,
+						event.line,
+						col + attr.index,
+						this,
+						attr.raw
+					);
+				}
 			});
-		},
-	});
+		});
+	},
 };

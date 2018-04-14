@@ -1,13 +1,12 @@
 {
   "name": "html-plugin-leremede",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "HTML Hint rules",
   "main": "index.js",
   "peerDependencies": {
     "htmlhint": "^0.9.13"
   },
   "devDependencies": {
-    "codecov": "3.0.0",
     "commitizen": "2.9.6",
     "eslint": "4.19.1",
     "eslint-config-leremede": "1.0.0",

@@ -1,3 +1,3 @@
 module.exports = {
-	"extends": "eslint-config-leremede"
+	"extends": "leremede"
 };

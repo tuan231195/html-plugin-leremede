@@ -1,5 +1,6 @@
 const { HTMLHint } = require('htmlhint');
-require('../../rules/leremede-unique-id')(HTMLHint);
+const rule = require('../../rules/leremede-unique-id');
+HTMLHint.addRule(rule);
 
 const ruleId = 'leremede-unique-id',
 	ruleOptions = {};

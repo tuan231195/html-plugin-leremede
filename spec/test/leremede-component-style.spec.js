@@ -1,7 +1,6 @@
-'use strict';
-
 const { HTMLHint } = require('htmlhint');
-require('../../rules/leremede-component-style')(HTMLHint);
+const rule = require('../../rules/leremede-component-style');
+HTMLHint.addRule(rule);
 
 const ruleId = 'leremede-component-style',
 	ruleOptions = {};

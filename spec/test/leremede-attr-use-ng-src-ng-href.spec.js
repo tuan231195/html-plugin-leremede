@@ -1,5 +1,6 @@
 const { HTMLHint } = require('htmlhint');
-require('../../rules/leremede-attr-use-ng-src-ng-href')(HTMLHint);
+const rule = require('../../rules/leremede-attr-use-ng-src-ng-href');
+HTMLHint.addRule(rule);
 
 const ruleId = 'leremede-attr-use-ng-src-ng-href',
 	ruleOptions = {};
