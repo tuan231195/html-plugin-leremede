@@ -1,5 +1,5 @@
 {
-  "name": "leremede-htmlhint",
+  "name": "html-plugin-leremede",
   "version": "1.0.0",
   "description": "HTML Hint rules",
   "main": "index.js",
@@ -31,6 +31,7 @@
       "path": "cz-conventional-changelog"
     }
   },
+  "keywords": ["htmlhint"],
   "author": {
     "name": "Leremede",
     "email": "leremede@gmail.com"
