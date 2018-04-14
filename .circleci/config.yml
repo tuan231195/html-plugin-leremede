@@ -25,3 +25,11 @@ jobs: # a collection of steps
       - run: yarn test
 
       - run: yarn coverage
+
+      - store_artifacts:
+          path: ./coverage
+
+      - run:
+          name: Send to CodeCov
+          command: bash <(curl -s https://codecov.io/bash)
+
