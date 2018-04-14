@@ -1,0 +1,38 @@
+{
+  "name": "leremede-htmlhint",
+  "version": "1.0.0",
+  "description": "HTML Hint rules",
+  "main": "index.js",
+  "peerDependencies": {
+    "htmlhint": "^0.9.13"
+  },
+  "devDependencies": {
+    "codecov": "3.0.0",
+    "commitizen": "2.9.6",
+    "eslint": "4.19.1",
+    "eslint-config-leremede": "1.0.0",
+    "htmlhint": "0.9.13",
+    "husky": "0.14.3",
+    "jasmine": "2.8.0",
+    "nyc": "11.6.0"
+  },
+  "nyc": {
+    "sourceMap": false
+  },
+  "scripts": {
+    "precommit": "yarn validate",
+    "validate": "yarn test",
+    "test": "nyc --reporter=text jasmine spec/test/*.js",
+    "cz": "git-cz",
+    "coverage": "nyc report --reporter=text-lcov > coverage.lcov && codecov"
+  },
+  "config": {
+    "commitizen": {
+      "path": "cz-conventional-changelog"
+    }
+  },
+  "author": {
+    "name": "Leremede",
+    "email": "leremede@gmail.com"
+  }
+}
