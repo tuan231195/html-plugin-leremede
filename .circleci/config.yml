@@ -22,6 +22,14 @@ jobs: # a collection of steps
           key: v1-dependencies-{{ checksum "package.json" }}
 
       # run tests!
-      - run: yarn test
+      - run: yarn test:html
 
       - run: yarn coverage
+
+      - store_artifacts:
+          path: ./coverage
+
+      - run:
+          name: Send to CodeCov
+          command: bash <(curl -s https://codecov.io/bash)
+
